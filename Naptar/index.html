@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naptár - Napi Teendők</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 Naptár</h1>
+            <div class="header-controls">
+                <button id="prevMonth" class="nav-btn">← Előző</button>
+                <h2 id="currentMonth"></h2>
+                <button id="nextMonth" class="nav-btn">Következő →</button>
+            </div>
+        </header>
+
+        <div class="calendar-wrapper">
+            <div class="calendar">
+                <div class="weekdays">
+                    <div class="weekday">Hétfő</div>
+                    <div class="weekday">Kedd</div>
+                    <div class="weekday">Szerda</div>
+                    <div class="weekday">Csütörtök</div>
+                    <div class="weekday">Péntek</div>
+                    <div class="weekday">Szombat</div>
+                    <div class="weekday">Vasárnap</div>
+                </div>
+                <div id="calendarDays" class="days"></div>
+            </div>
+
+            <div class="task-panel">
+                <h3 id="selectedDateTitle">Válassz egy napot</h3>
+                <div id="taskList" class="task-list"></div>
+                <div class="add-task-form">
+                    <input type="text" id="taskInput" placeholder="Új teendő hozzáadása...">
+                    <button id="addTaskBtn">Hozzáadás</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Teendő szerkesztése</h3>
+            <input type="text" id="editTaskInput">
+            <div class="modal-buttons">
+                <button id="saveTaskBtn">Mentés</button>
+                <button id="deleteTaskBtn" class="delete-btn">Törlés</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leib Elsősegély Felszerelések</title>
+    <meta name="description" content="Leib Roland elsősegély felszerelések és oktatás szolgáltatásai. Professzionális elsősegély felszerelések, oktatás és karbantartás.">
+    <meta name="keywords" content="elsősegély, felszerelések, oktatás, mentőszolgálat, Leib Roland">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/images/leib_logo.webp">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="assets/images/leib_logo.webp" alt="Leib Elsősegély Logo" class="logo">
+                    <span class="logo-text">Leib Elsősegély</span>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Főoldal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">Bemutatkozás</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">Szolgáltatások</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#products" class="nav-link">Eszközök</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Kapcsolat</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Leib Elsősegély Felszerelések</h1>
+                <p class="hero-subtitle">Professzionális elsősegély felszerelések és oktatás</p>
+                <p class="hero-description">
+                    Főállásban az Országos Mentőszolgálatnál dolgozom. Több mint tízéves vállalkozói tapasztalatommal és több mint száz partneremmel biztosítjuk a megfelelő elsősegély felszereléseket és oktatást.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Tudjon meg többet</a>
+                    <a href="#contact" class="btn btn-secondary">Kapcsolat</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/undraw_medicine_hqqg.png" alt="Elsősegély felszerelések" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Bemutatkozás</h2>
+                <p class="section-subtitle">Leib Roland</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <div id="about-content">
+                        <!-- Content will be loaded from API -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Szolgáltatásaink</h2>
+                <p class="section-subtitle">Térítésmentes szolgáltatások a megvásárolt felszerelésekhez</p>
+            </div>
+            
+            <div class="services-grid" id="services-grid">
+                <!-- Services will be loaded from API -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Eszközök</h2>
+                <p class="section-subtitle">Professzionális elsősegély felszerelések</p>
+            </div>
+            
+            <div class="product-filters">
+                <button class="filter-btn active" data-category="all">Összes</button>
+                <div id="category-filters">
+                    <!-- Category filters will be loaded from API -->
+                </div>
+            </div>
+            
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded from API -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Kapcsolat</h2>
+                <p class="section-subtitle">Vegye fel velünk a kapcsolatot</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info" id="contact-info">
+                    <!-- Contact info will be loaded from API -->
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Név" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="E-mail cím" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" placeholder="Telefonszám">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Üzenet" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Üzenet küldése</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/leib_logo.webp" alt="Leib Elsősegély Logo" class="footer-logo-img">
+                    <span class="footer-logo-text">Leib Elsősegély</span>
+                </div>
+                
+                <div class="footer-info">
+                    <p>&copy; 2025 Leib Elsősegély Felszerelések Forgalmazása. Minden jog fenntartva.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal">
+        <div class="modal-content">
+            <span class="modal-close" id="modal-close" onclick="document.getElementById('image-modal').classList.remove('show'); document.body.style.overflow = '';">&times;</span>
+            <img id="modal-image" class="modal-image" src="" alt="">
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

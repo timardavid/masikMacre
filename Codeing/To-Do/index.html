@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vállalati Dashboard - Bejelentkezés</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <h1>🏢 Vállalati Dashboard</h1>
+            <p class="subtitle">Válassza ki a részleget</p>
+            
+            <div class="role-selection">
+                <div class="role-button" data-role="Admin">
+                    <div class="role-icon">👤</div>
+                    <h3>Admin</h3>
+                    <p>Teljes hozzáférés</p>
+                </div>
+                <div class="role-button" data-role="IT">
+                    <div class="role-icon">💻</div>
+                    <h3>IT</h3>
+                    <p>Felhasználók és rendszerek</p>
+                </div>
+                <div class="role-button" data-role="HR">
+                    <div class="role-icon">👥</div>
+                    <h3>HR</h3>
+                    <p>Emberi erőforrások</p>
+                </div>
+                <div class="role-button" data-role="Finance">
+                    <div class="role-icon">💰</div>
+                    <h3>Pénzügy</h3>
+                    <p>Költségvetés és zárások</p>
+                </div>
+                <div class="role-button" data-role="CEO">
+                    <div class="role-icon">🎯</div>
+                    <h3>Ügyvezető</h3>
+                    <p>Teljes áttekintés</p>
+                </div>
+            </div>
+            
+            <div class="login-form" id="loginForm" style="display: none;">
+                <input type="email" id="email" placeholder="Email cím" required>
+                <input type="password" id="password" placeholder="Jelszó" required>
+                <button onclick="login()">Bejelentkezés</button>
+                <p class="error" id="errorMsg"></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let selectedRole = '';
+        
+        document.querySelectorAll('.role-button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.role-button').forEach(b => b.classList.remove('selected'));
+                button.classList.add('selected');
+                selectedRole = button.dataset.role;
+                setTimeout(() => {
+                    document.getElementById('loginForm').style.display = 'block';
+                }, 200);
+            });
+        });
+        
+        async function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('errorMsg');
+            
+            const response = await fetch('api/auth.php?action=login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                window.location.href = 'dashboard.html';
+            } else {
+                errorMsg.textContent = result.error || 'Bejelentkezési hiba';
+            }
+        }
+        
+        document.getElementById('password').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') login();
+        });
+    </script>
+</body>
+</html>

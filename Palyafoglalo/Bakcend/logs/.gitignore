@@ -1,0 +1,5 @@
+# Ignore email log files
+*.html
+*.txt
+!README.md
+

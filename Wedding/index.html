@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John & Jane - Wedding Invitation</title>
+    <meta name="description" content="Join us as we celebrate our love and begin our journey together as husband and wife!">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">E & M</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#story" class="nav-link">Our Story</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#rsvp" class="nav-link">RSVP</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">John</span>
+                    <span class="title-ampersand">&</span>
+                    <span class="title-line">Jane</span>
+                </h1>
+                <p class="hero-date">June 16, 2026</p>
+                <p class="hero-subtitle">Together we begin the most beautiful chapter of our lives</p>
+                <div class="hero-scroll">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2 class="section-title">Countdown</h2>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">0</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">0</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">0</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">0</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="story-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2020</div>
+                    <div class="timeline-content">
+                        <h3>First Meeting</h3>
+                        <p>We met at a summer festival where music and dance brought us together. John was playing guitar, and I was dancing to the music. Since then, we dance together through life every day.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022</div>
+                    <div class="timeline-content">
+                        <h3>First Love</h3>
+                        <p>On a beautiful spring evening, under the stars, John told me for the first time that he loves me. That moment changed everything, and our love story truly began.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h3>The Proposal</h3>
+                        <p>During a romantic weekend in the mountains, when the sunset painted the landscape in gold, John got down on one knee and asked for my hand in marriage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="engagement">
+                    <img src="assets/images/pexels-alxvila1-288008.jpg" alt="Proposal">
+                    <div class="gallery-overlay">
+                        <h3>Wedding</h3>
+                        <p>Our special day</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="travel">
+                    <img src="assets/images/pexels-emma-bauso-1183828-2253870.jpg" alt="Travel">
+                    <div class="gallery-overlay">
+                        <h3>Wedding</h3>
+                        <p>Our special day</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="daily">
+                    <img src="assets/images/pexels-goumbik-574011.jpg" alt="Daily Life">
+                    <div class="gallery-overlay">
+                        <h3>Wedding</h3>
+                        <p>Our special day</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="engagement">
+                    <img src="assets/images/pexels-mastercowley-1128783.jpg" alt="Engagement">
+                    <div class="gallery-overlay">
+                        <h3>Wedding</h3>
+                        <p>Our special day</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="travel">
+                    <img src="assets/images/pexels-megapixelstock-17834.jpg" alt="Holiday">
+                    <div class="gallery-overlay">
+                        <h3>Wedding</h3>
+                        <p>Our special day</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="daily">
+                    <img src="assets/images/pexels-reneterp-1345574.jpg" alt="Shared moments">
+                    <div class="gallery-overlay">
+                        <h3>Wedding</h3>
+                        <p>Our special day</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <h2 class="section-title">Events</h2>
+            <div class="events-container">
+                <div class="event-card">
+                    <div class="event-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <div class="event-details">
+                        <h3>Ceremony</h3>
+                        <p class="event-time">2:00 PM - 3:00 PM</p>
+                        <p class="event-location">Main Church</p>
+                        <p class="event-address">Downtown, Main Square 1</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <div class="event-details">
+                        <h3>Photography</h3>
+                        <p class="event-time">3:30 PM - 5:00 PM</p>
+                        <p class="event-location">Central Park</p>
+                        <p class="event-address">Downtown, Central District</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="event-details">
+                        <h3>Dinner & Reception</h3>
+                        <p class="event-time">6:00 PM - 2:00 AM</p>
+                        <p class="event-location">Grand Hotel Restaurant</p>
+                        <p class="event-address">Downtown, Main Street 2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="rsvp-section">
+        <div class="container">
+            <h2 class="section-title">RSVP</h2>
+            <div class="rsvp-container">
+                <div class="rsvp-info">
+                    <h3>We can't wait to celebrate with you!</h3>
+                    <p>Please let us know by August 31st if you'll be able to join us for our special day.</p>
+                    <div class="rsvp-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>Jane: +1 555 123 4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>John: +1 555 765 4321</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>john.jane.wedding@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="rsvp-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <select name="attendance" required>
+                            <option value="">Please select...</option>
+                            <option value="yes">Yes, I'll be there!</option>
+                            <option value="no">Sorry, I can't make it</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="guests" placeholder="Number of Guests" min="1" max="10">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Message (optional)"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send RSVP</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>John & Jane</h3>
+                    <p>Join us on our special day as we begin our journey together as husband and wife.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#rsvp">RSVP</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-calendar"></i> June 16, 2026</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Downtown, City</p>
+                    <p><i class="fas fa-envelope"></i> john.jane.wedding@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    <p class="footer-note">Thank you for being part of our special day!</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 John & Jane Wedding. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> for our special day</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ismerd meg a JDW csapatát - Professzionális webdesign megoldások">
+    <title>Rólunk - JDW</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .about-page {
+            padding-top: 100px;
+        }
+        
+        .about-hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .about-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-content {
+            padding: 4rem 0;
+        }
+        
+        .about-section {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+        
+        .about-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .about-section p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition-base);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .team-section {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .team-image {
+            width: 100%;
+            height: 300px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-image i {
+            font-size: 8rem;
+            color: white;
+            opacity: 0.3;
+        }
+        
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .team-info {
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .team-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .team-bio {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            color: var(--primary-color);
+            transition: var(--transition-base);
+        }
+        
+        .team-social a:hover {
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .stats-section {
+            padding: 4rem 0;
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item p {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Biztosítjuk hogy ne jelenjen meg NaN */
+        .stat-item h3:empty::before {
+            content: "0";
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>JD<strong>Webdesign</strong></span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html#home" class="nav-link">Főoldal</a></li>
+                    <li><a href="index.html#services" class="nav-link">Szolgáltatások</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">Portfólió</a></li>
+                    <li><a href="index.html#pricing" class="nav-link">Árak</a></li>
+                    <li><a href="about.html" class="nav-link active">Rólunk</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Kapcsolat</a></li>
+                </ul>
+                
+                <div class="nav-buttons">
+                    <a href="index.html#contact" class="btn btn-primary">Ajánlatot kérek</a>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Page Content -->
+    <div class="about-page">
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <span class="section-badge">Rólunk</span>
+                <h1>Ismerd Meg a <span class="gradient-text">JDW</span> Csapatát</h1>
+                <p style="max-width: 600px; margin: 0 auto; font-size: 1.25rem;">
+                    Szenvedélyünk a webdesign - tervezünk, kreatív megoldásokat alkotunk
+                </p>
+            </div>
+        </section>
+
+        <!-- About Content -->
+        <section class="about-content">
+            <div class="container">
+                <div class="about-section">
+                    <h2><i class="fas fa-bullseye"></i> Küldetésünk</h2>
+                    <p>
+                        A JDW célja, hogy kisvállalkozásoknak és vállalkozóknak professzionális, 
+                        modern webdesign megoldásokat nyújtsunk megfizethető áron. Hiszünk abban, hogy minden 
+                        vállalkozás megérdemel egy szép, funkcionális és felhasználóbarát weboldalt.
+                    </p>
+                    <p>
+                        Tervezett prototípusokkal és design rendszerekkel segítünk digitális álmaidat valóra váltani.
+                    </p>
+                </div>
+
+                <div class="about-section">
+                    <h2><i class="fas fa-lightbulb"></i> Mivel Foglalkozunk?</h2>
+                    <p>
+                        A JDW szakértői vagyunk az egyoldalas (OnePager) és többoldalas weboldalak 
+                        tervezésének. Szolgáltatásaink hat fő területen nyújtanak megoldást:
+                    </p>
+                    
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>Landing Page</h3>
+                            <p>Konverziót optimalizált egyoldalas weboldalak Figmában tervezve.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>OnePage</h3>
+                            <p>Egyoldalas weboldal tervezés Figmában, opcionálisan kódolt változattal.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3>Portfólió Oldal</h3>
+                            <p>Egyedi portfólió weboldalak kreatívoknak és szolgáltatóknak.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-layer-group"></i>
+                            </div>
+                            <h3>Többoldalas Webdesign</h3>
+                            <p>Komplex, többoldalas weboldalak teljes prototípusokkal Figmában.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <h3>Továbbfejlesztés</h3>
+                            <p>Meglévő designok bővítése új elemekkel és kreatív fejlesztés.</p>
+                        </div>
+                        
+                        <div class="value-card">
+                            <div class="value-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                            <h3>Karbantartás</h3>
+                            <p>Design szintű karbantartás, tartalomfrissítés és kreatív támogatás.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-section">
+                    <h2><i class="fas fa-star"></i> Értékeink</h2>
+                    <p>
+                        <strong>Minőség:</strong> Minden projektet a legmagasabb minőségi standardok szerint valósítunk meg.<br><br>
+                        <strong>Egyediség:</strong> Nem használunk előre gyártott sablonokat - minden weboldal egyedi tervezésű.<br><br>
+                        <strong>Kommunikáció:</strong> Folyamatos kapcsolattartás ügyfeleinkkel a projekt minden szakaszában.<br><br>
+                        <strong>Határidők:</strong> Pontos és megbízható határidő teljesítés minden esetben.<br><br>
+                        <strong>Támogatás:</strong> Projektlezárás után is számíthatsz ránk technikai kérdésekben.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <h2 style="color: white; margin-bottom: 1rem;">Eddigi Munkáink</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">
+                    Folyamatosan bővülő portfólió és elégedett ügyfelek
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>0</h3>
+                        <p>Elkészült Projekt</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>0</h3>
+                        <p>Elégedett Ügyfél</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>0</h3>
+                        <p>Év Tapasztalat</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Egyedi Megoldások</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section" id="team">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Csapatunk</span>
+                    <h2 class="section-title">Kik <span class="gradient-text">Vagyunk?</span></h2>
+                    <p class="section-description">
+                        Ismerd meg a JDW mögött álló szakembereket
+                    </p>
+                </div>
+                
+                <div class="team-grid">
+                    <!-- Team Member 1 - Timár Dávid -->
+                    <div class="team-member">
+                        <div class="team-image">
+                            <i class="fas fa-user"></i>
+                            <!-- Ide jön majd a csapattag képe: <img src="assets/photos/team-1.jpg" alt="Timár Dávid"> -->
+                        </div>
+                        <div class="team-info">
+                            <h3>Timár Dávid</h3>
+                            <p class="team-role">CEO & Webdesigner & Frontend Fejlesztő</p>
+                            <p class="team-bio">
+                                Szenvedélyes webdesigner és frontend fejlesztő, aki több éves tapasztalattal rendelkezik 
+                                tervezésben és frontend fejlesztésben.
+                            </p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2 - Leib Jázmin -->
+                    <div class="team-member">
+                        <div class="team-image" style="background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);">
+                            <i class="fas fa-user"></i>
+                            <!-- Ide jön majd a csapattag képe: <img src="assets/photos/team-2.jpg" alt="Leib Jázmin"> -->
+                        </div>
+                        <div class="team-info">
+                            <h3>Leib Jázmin</h3>
+                            <p class="team-role">CEO & Webdesigner</p>
+                            <p class="team-bio">
+                                Kreatív webdesigner, aki tervezésben és UI/UX designban specializálódott. 
+                                Modern, letisztult dizájnokkal segít vállalkozásoknak céljuk elérésében.
+                            </p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more team members as needed -->
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <p style="font-size: 1.125rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                        Szeretnél csatlakozni a csapatunkhoz vagy együttműködni velünk?
+                    </p>
+                    <a href="index.html#contact" class="btn btn-primary btn-lg">
+                        <i class="fas fa-envelope"></i> Vedd Fel Velünk a Kapcsolatot
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>JD<strong>Webdesign</strong></span>
+                    </div>
+                    <p>
+                        Professzionális webdesign megoldások vállalkozásoknak. 
+                        Figmában tervezett vagy kóddal fejlesztett, modern, reszponzív webdesignok.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Szolgáltatások</h4>
+                    <ul>
+                        <li><a href="services.html">Landing Page</a></li>
+                        <li><a href="services.html">OnePage</a></li>
+                        <li><a href="services.html">Portfólió Oldal</a></li>
+                        <li><a href="services.html">Többoldalas Webdesign</a></li>
+                        <li><a href="services.html">Karbantartás</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Információ</h4>
+                    <ul>
+                        <li><a href="index.html#portfolio">Portfólió</a></li>
+                        <li><a href="index.html#pricing">Árak</a></li>
+                        <li><a href="about.html">Rólunk</a></li>
+                        <li><a href="about.html#team">Csapatunk</a></li>
+                        <li><a href="index.html#contact">Kapcsolat</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Kapcsolat</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@jdw.hu</li>
+                        <li><i class="fas fa-phone"></i> +36 20 803 8081</li>
+                        <li><i class="fas fa-map-marker-alt"></i>Csak online</li>
+                        <li><i class="fas fa-clock"></i> H-P: 9:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 JDW. Minden jog fenntartva.</p>
+                <div class="footer-links">
+                    <a href="#">Adatvédelem</a>
+                    <a href="#">Felhasználási feltételek</a>
+                    <a href="#">Süti beállítások</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

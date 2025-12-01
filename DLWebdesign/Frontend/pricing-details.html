@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Részletes árazási információk - JDW weboldal készítés">
+    <title>Árazás Részletesen - JDW</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .pricing-detail-page {
+            padding-top: 100px;
+            padding-bottom: 4rem;
+            min-height: 100vh;
+            background: var(--bg-secondary);
+        }
+        
+        .pricing-detail-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .pricing-detail-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-detail-header .package-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-detail-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .price-summary {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border-radius: var(--radius-lg);
+            margin-bottom: 3rem;
+        }
+        
+        .price-summary .amount {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .detail-section {
+            margin-bottom: 3rem;
+        }
+        
+        .detail-section h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .detail-section h3 {
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .detail-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .detail-section ul li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .detail-section ul li:before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-size: 1.25rem;
+        }
+        
+        .detail-section ul li.not-included:before {
+            content: "\f057";
+            color: var(--error);
+        }
+        
+        .detail-section p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .process-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .process-timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-primary);
+        }
+        
+        .process-step {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+        }
+        
+        .process-step:before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+        
+        .process-step h4 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 2rem;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            margin-top: 3rem;
+        }
+        
+        .cta-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition-base);
+        }
+        
+        .back-link:hover {
+            gap: 1rem;
+        }
+        
+        .highlight-box {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            margin: 1.5rem 0;
+        }
+        
+        .highlight-box strong {
+            color: #D97706;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>JD<strong>Webdesign</strong></span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html#home" class="nav-link">Főoldal</a></li>
+                    <li><a href="index.html#services" class="nav-link">Szolgáltatások</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">Portfólió</a></li>
+                    <li><a href="index.html#pricing" class="nav-link active">Árak</a></li>
+                    <li><a href="about.html" class="nav-link">Rólunk</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Kapcsolat</a></li>
+                </ul>
+                
+                <div class="nav-buttons">
+                    <a href="index.html#contact" class="btn btn-primary">Ajánlatot kérek</a>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pricing Detail Content -->
+    <div class="pricing-detail-page">
+        <div class="container">
+            <a href="index.html#pricing" class="back-link">
+                <i class="fas fa-arrow-left"></i> Vissza az árakhoz
+            </a>
+            
+            <div class="pricing-detail-content" id="package-content">
+                <!-- Content will be loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>JD<strong>Webdesign</strong></span>
+                    </div>
+                    <p>
+                        Professzionális webdesign megoldások vállalkozásoknak. 
+                        Figmában tervezett vagy kóddal fejlesztett, modern, reszponzív webdesignok.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Szolgáltatások</h4>
+                    <ul>
+                        <li><a href="services.html">Landing Page</a></li>
+                        <li><a href="services.html">OnePage</a></li>
+                        <li><a href="services.html">Portfólió Oldal</a></li>
+                        <li><a href="services.html">Többoldalas Webdesign</a></li>
+                        <li><a href="services.html">Karbantartás</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Információ</h4>
+                    <ul>
+                        <li><a href="index.html#portfolio">Portfólió</a></li>
+                        <li><a href="index.html#pricing">Árak</a></li>
+                        <li><a href="about.html">Rólunk</a></li>
+                        <li><a href="about.html#team">Csapatunk</a></li>
+                        <li><a href="index.html#contact">Kapcsolat</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Kapcsolat</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@jdw.hu</li>
+                        <li><i class="fas fa-phone"></i> +36 20 803 8081</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Csak online</li>
+                        <li><i class="fas fa-clock"></i> H-P: 9:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 JDW. Minden jog fenntartva.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Package data
+        const packages = {
+            kezdo: {
+                name: 'Kezdő Csomag',
+                price: '149.000 Ft',
+                subtitle: 'Tökéletes kisvállalkozásoknak és induló vállalkozásoknak',
+                description: 'A Kezdő csomag ideális választás azoknak, akik most indítanak vállalkozást vagy egyszerű online jelenlétre van szükségük. Egy professzionálisan megtervezett egyoldalas weboldallal hatékonyan tudod bemutatni vállalkozásodat.',
+                features: [
+                    '1 oldalas modern weboldal',
+                    'Teljesen reszponzív dizájn (mobil, tablet, desktop)',
+                    'Professzionális kapcsolati űrlap',
+                    'Képgaléria / Portfólió szekció',
+                    'Egyedi grafikai elemek és ikonok',
+                    'Rendszer és style guide',
+                    'Interaktív prototípus',
+                    'Kódolásra kész export',
+                    'Dokumentáció',
+                    '3 hónap ingyenes támogatás',
+                    '2 felülvizsgálati kör a tervezés során',
+                    '+Opcionális: HTML/CSS/JS kódolt változat'
+                ],
+                notIncluded: [
+                    'Több aloldal',
+                    'Admin panel',
+                    'Blog funkció',
+                    'Többnyelvűség',
+                    'Felhasználói fiókok',
+                    'Egyedi modulok'
+                ],
+                perfectFor: [
+                    'Kisvállalkozások, egyéni vállalkozók',
+                    'Szolgáltatók online bemutatkozása',
+                    'Esemény vagy promóciós oldalak',
+                    'Egyszerű portfólió megjelenítés',
+                    'Terméklancírozás'
+                ],
+                process: [
+                    {
+                        title: '1. Konzultáció',
+                        description: 'Megbeszéljük az elképzeléseidet, a vállalkozásod jellemzőit és célkitűzéseidet.'
+                    },
+                    {
+                        title: '2. Tervezés',
+                        description: 'Készítünk egy tervet, amit együtt finomítunk.'
+                    },
+                    {
+                        title: '3. Fejlesztés',
+                        description: 'A jóváhagyott terv alapján elkészítjük a működő webdesign, modern technológiákkal.'
+                    },
+                    {
+                        title: '4. Tesztelés',
+                        description: 'Alapos tesztelés különböző eszközökön és böngészőkben.'
+                    },
+                    {
+                        title: '5. Átadás',
+                        description: 'Éles indítás, bemutatás és 3 hónap ingyenes támogatás.'
+                    }
+                ],
+                timeline: '2-3 hét',
+                support: '3 hónap ingyenes email és telefonos támogatás projekt lezárása után'
+            },
+            professzionalis: {
+                name: 'Professzionális Csomag',
+                price: '299.000 Ft',
+                subtitle: 'A legtöbb vállalkozás választása - teljes körű megoldás',
+                description: 'A Professzionális csomag komplett webdesign megoldás középvállalkozásoknak, akik komolyabb online jelenlétre vágynak. Több aloldallal, admin panellel és blog funkcióval bővítheted vállalkozásod kommunikációját.',
+                features: [
+                    'Korlátlan számú aloldal',
+                    'Teljesen reszponzív és modern dizájn',
+                    'Egyedi grafikai elemek és ikonok',
+                    'Adminisztrációs felület (CMS)',
+                    'Blog rendszer, cikk publikáláshoz',
+                    'Kapcsolati űrlap email értesítéssel',
+                    'Haladó design elemek',
+                    'Social media integráció',
+                    'Képgaléria / Portfólió szekció',
+                    'GYIK (Gyakran Ismételt Kérdések) oldal',
+                    '6 hónap ingyenes támogatás',
+                    '3 felülvizsgálati kör a tervezés során'
+                ],
+                notIncluded: [
+                    'Többnyelvűség',
+                    'Felhasználói fiókok',
+                    'Egyedi modulok'
+                ],
+                perfectFor: [
+                    'Középvállalkozások',
+                    'Szolgáltató cégek komplett bemutatkozása',
+                    'Szakemberek részletes portfóliója',
+                    'Tartalomközpontú oldalak blogfunkcióval',
+                    'Rendezvényszervező cégek',
+                    'Tanácsadó és oktatási szolgáltatások'
+                ],
+                process: [
+                    {
+                        title: '1. Részletes konzultáció',
+                        description: 'Alapos igényfelmérés, konkurencia elemzés és célcsoport meghatározás.'
+                    },
+                    {
+                        title: '2. Struktúra tervezés',
+                        description: 'Oldaltérkép és tartalmi struktúra kidolgozása.'
+                    },
+                    {
+                        title: '3. Tervezés',
+                        description: 'Részletes design vagy mockup készítés minden oldalhoz.'
+                    },
+                    {
+                        title: '4. Fejlesztés',
+                        description: 'Teljes design rendszer, admin panel és egyéb funkciók tervezése.'
+                    },
+                    {
+                        title: '5. Tartalom feltöltés',
+                        description: 'Szövegek, képek feltöltése és formázása.'
+                    },
+                    {
+                        title: '6. Tesztelés & Optimalizálás',
+                        description: 'Alapos tesztelés, UX finomhangolás, optimalizálás.'
+                    },
+                    {
+                        title: '7. Átadás & Képzés',
+                        description: 'Fájlok átadása, rendszer használatának oktatása.'
+                    }
+                ],
+                timeline: '4-6 hét',
+                support: '6 hónap ingyenes email és telefonos támogatás, rendszer használati oktatás'
+            },
+            premium: {
+                name: 'Prémium Csomag',
+                price: '549.000 Ft',
+                subtitle: 'Teljes körű prémium megoldás egyedi igényekre',
+                description: 'A Prémium csomag a legtöbbet nyújtó megoldás azoknak, akik komplex funkciókat, korlátlan számú oldalt és prémium szolgáltatásokat igényelnek. Egyedi modulokkal és prémium támogatással.',
+                features: [
+                    'Korlátlan számú aloldal',
+                    'Prémium egyedi dizájn',
+                    'Ügyfél fiók és bejelentkezés rendszer',
+                    'Teljes admin panel minden funkcióval',
+                    'Professzionális design audit és optimalizálás',
+                    'Haladó elemek és animációk',
+                    'Biztonsági és adatvédelmi oldal',
+                    'Social media teljes integráció',
+                    'Többnyelvűség opció',
+                    'Egyedi funkciók és modulok',
+                    'Cookie bar és adatvédelmi oldal',
+                    '12 hónap prémium támogatás',
+                    'Korlátlan felülvizsgálati kör'
+                ],
+                perfectFor: [
+                    'Nagyobb vállalatok komplex weboldala',
+                    'Szolgáltató platformok',
+                    'Booking rendszerek',
+                    'Egyedi igényű projektek',
+                    'Felhasználói fiókos rendszerek',
+                    'Tartalomgazdag portálok'
+                ],
+                process: [
+                    {
+                        title: '1. Stratégiai konzultáció',
+                        description: 'Részletes üzleti elemzés, user journey tervezés, funkcionális specifikáció.'
+                    },
+                    {
+                        title: '2. UX/UI tervezés',
+                        description: 'Teljes körű design rendszer elkészítése, wireframe, prototípus.'
+                    },
+                    {
+                        title: '3. Architektúra',
+                        description: 'Komplex rendszer tervezés, komponens architektúra felépítése.'
+                    },
+                    {
+                        title: '4. Teljes design fejlesztés',
+                        description: 'Teljes rendszer, admin panel, egyedi modulok tervezése.'
+                    },
+                    {
+                        title: '5. Felhasználói rendszer',
+                        description: 'Bejelentkezés, regisztráció, felhasználói fiókok kialakítása.'
+                    },
+                    {
+                        title: '6. Tartalom & konfiguráció',
+                        description: 'Tartalmak beillesztése, beállítások, integráció.'
+                    },
+                    {
+                        title: '7. Tesztelés & QA',
+                        description: 'Alapos UX tesztelés, finomhangolás.'
+                    },
+                    {
+                        title: '8. Átadás & Oktatás',
+                        description: 'Fájlok átadása, részletes oktatás, támogatási dokumentáció.'
+                    }
+                ],
+                timeline: '8-12 hét',
+                support: '12 hónap prémium email, telefonos és remote támogatás, rendszeres karbantartás'
+            }
+        };
+
+        // Get package from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const packageName = urlParams.get('package') || 'kezdo';
+        const packageData = packages[packageName];
+
+        // Load package content
+        if (packageData) {
+            document.getElementById('package-content').innerHTML = `
+                <div class="pricing-detail-header">
+                    <span class="package-badge">${packageData.name}</span>
+                    <h1>${packageData.name}</h1>
+                    <p>${packageData.subtitle}</p>
+                </div>
+
+                <div class="price-summary">
+                    <div class="amount">${packageData.price}</div>
+                    <p>egyszeri költség, ÁFÁ-val együtt</p>
+                </div>
+
+                <div class="detail-section">
+                    <h2><i class="fas fa-info-circle"></i> Csomag Leírása</h2>
+                    <p>${packageData.description}</p>
+                </div>
+
+                <div class="highlight-box">
+                    <strong><i class="fas fa-clock"></i> Átfutási idő:</strong> ${packageData.timeline}
+                </div>
+
+                <div class="detail-section">
+                    <h2><i class="fas fa-check-circle"></i> Mit Tartalmaz?</h2>
+                    <ul>
+                        ${packageData.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                    
+                    ${packageData.notIncluded ? `
+                        <h3><i class="fas fa-times-circle"></i> Mit NEM tartalmaz?</h3>
+                        <ul>
+                            ${packageData.notIncluded.map(feature => `<li class="not-included">${feature}</li>`).join('')}
+                        </ul>
+                    ` : ''}
+                </div>
+
+                <div class="detail-section">
+                    <h2><i class="fas fa-users"></i> Kinek Ajánljuk?</h2>
+                    <ul>
+                        ${packageData.perfectFor.map(item => `<li>${item}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="detail-section">
+                    <h2><i class="fas fa-tasks"></i> Munkafolyamat</h2>
+                    <div class="process-timeline">
+                        ${packageData.process.map(step => `
+                            <div class="process-step">
+                                <h4>${step.title}</h4>
+                                <p>${step.description}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h2><i class="fas fa-headset"></i> Támogatás</h2>
+                    <p>${packageData.support}</p>
+                </div>
+
+                <div class="cta-section">
+                    <h3>Felkeltettük az érdeklődésed?</h3>
+                    <p>Kérj ingyenes ajánlatot és konzultációt még ma!</p>
+                    <a href="index.html#contact" class="btn btn-light btn-lg">
+                        <i class="fas fa-paper-plane"></i> Ajánlatot Kérek
+                    </a>
+                </div>
+            `;
+        } else {
+            document.getElementById('package-content').innerHTML = `
+                <div class="pricing-detail-header">
+                    <h1>Csomag nem található</h1>
+                    <p>A keresett árcsomag nem létezik.</p>
+                    <br>
+                    <a href="index.html#pricing" class="btn btn-primary">Vissza az árakhoz</a>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
+

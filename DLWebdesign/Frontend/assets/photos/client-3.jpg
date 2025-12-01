@@ -1,0 +1,9 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="100" fill="#8B5CF6"/>
+  <circle cx="100" cy="75" r="35" fill="white" opacity="0.9"/>
+  <ellipse cx="100" cy="150" rx="55" ry="40" fill="white" opacity="0.9"/>
+  <text x="50%" y="95%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    SZABÓ M.
+  </text>
+</svg>
+

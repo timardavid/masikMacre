@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vállalati Dashboard - Enterprise</title>
+    <link rel="stylesheet" href="assets/css/style-enterprise.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="top-header">
+        <div class="header-left">
+            <div class="logo">🏢 Company</div>
+            <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
+        </div>
+        
+        <div class="header-center">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Keresés..." id="globalSearch">
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <button class="icon-btn" id="notificationBtn"><i class="fas fa-bell"></i></button>
+            <button class="icon-btn" id="settingsBtn"><i class="fas fa-cog"></i></button>
+            <button class="icon-btn" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin&background=667eea&color=fff" alt="User">
+                <div class="user-info">
+                    <div id="headerUserName">Admin</div>
+                    <div id="headerUserRole">Manager</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="main-container">
+        <!-- Left Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="nav-menu">
+                <div class="nav-section">
+                    <div class="nav-section-title">MENU</div>
+                    <a href="#" data-view="overview" class="nav-item active">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboards</span>
+                        <i class="fas fa-chevron-right nav-arrow"></i>
+                    </a>
+                    <a href="#" data-view="employees" class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Dolgozók</span>
+                    </a>
+                    <a href="#" data-view="tasks" class="nav-item">
+                        <i class="fas fa-tasks"></i>
+                        <span>Feladatok</span>
+                    </a>
+                    <a href="#" data-view="statistics" class="nav-item">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Analytics</span>
+                    </a>
+                    <a href="#" data-view="financial" class="nav-item">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Pénzügy</span>
+                    </a>
+                </div>
+                
+                <div class="nav-section" id="adminSection" style="display:none;">
+                    <div class="nav-section-title">ADMIN</div>
+                    <a href="#" data-view="register" class="nav-item">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Regisztráció</span>
+                    </a>
+                </div>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Overview Section -->
+            <section class="view-section active" id="overview">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <div class="title-icon">📊</div>
+                        <div>
+                            <h1>Vállalati Dashboard</h1>
+                            <p>Továbbfejlesztett irányítópult a vállalat teljes áttekintéséhez.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Performance Cards -->
+                <div class="portfolio-cards" id="portfolioCards">
+                    <!-- Filled by JavaScript -->
+                </div>
+                
+                <!-- Two Column Layout -->
+                <div class="two-column-layout">
+                    <div class="column-left">
+                        <div class="support-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-users"></i> Dolgozói Állapot</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="metric-large">
+                                    <div class="metric-value" id="activePercentage">0%</div>
+                                    <div class="metric-label">AKTÍV MUNKAIDŐ</div>
+                                    <div class="metric-change positive">
+                                        <i class="fas fa-arrow-up"></i> <span id="activeChange">+0</span>
+                                    </div>
+                                </div>
+                                <canvas id="activeChart" height="100"></canvas>
+                                <div class="progress-section">
+                                    <div class="progress-item">
+                                        <div class="progress-label">Dolgozók száma</div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" id="employeesProgress"></div>
+                                        </div>
+                                        <div class="progress-value" id="employeesCount">0</div>
+                                    </div>
+                                </div>
+                                <div class="mini-cards">
+                                    <div class="mini-card">
+                                        <div class="mini-value" id="workingCount">0</div>
+                                        <div class="mini-label">Munkában</div>
+                                    </div>
+                                    <div class="mini-card">
+                                        <div class="mini-value" id="breakCount">0</div>
+                                        <div class="mini-label">Szünet</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="column-right">
+                        <div class="timeline-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-clock"></i> Események</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="timeline-list" id="timelineList">
+                                    <!-- Filled by JavaScript -->
+                                </div>
+                                <button class="view-all-btn"><i class="fas fa-list"></i> Összes megtekintése</button>
+                                <div class="mini-cards">
+                                    <div class="mini-card">
+                                        <div class="mini-value" id="pendingTasks">0</div>
+                                        <div class="mini-label">Függő feladat</div>
+                                    </div>
+                                    <div class="mini-card">
+                                        <div class="mini-value" id="completedTasks">0</div>
+                                        <div class="mini-label">Befejezett</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Employees Section -->
+            <section class="view-section" id="employees">
+                <div class="section-header-modern">
+                    <div>
+                        <h2><i class="fas fa-users"></i> Dolgozók</h2>
+                        <p>Továbbfejlesztett dolgozói kezelés és nyilvántartás</p>
+                    </div>
+                    <button class="btn-modern-primary" onclick="openModal('employee')">
+                        <i class="fas fa-plus"></i> Új dolgozó
+                    </button>
+                </div>
+                
+                <div class="employee-grid-modern" id="employeeGrid">
+                    <!-- Filled by JavaScript -->
+                </div>
+            </section>
+            
+            <!-- Other sections will be added here -->
+            <section class="view-section" id="tasks">
+                <div class="section-header-modern">
+                    <h2><i class="fas fa-tasks"></i> Feladatok</h2>
+                </div>
+                <div id="taskList"></div>
+            </section>
+            
+            <section class="view-section" id="statistics">
+                <div class="section-header-modern">
+                    <h2><i class="fas fa-chart-pie"></i> Analytics</h2>
+                </div>
+                <div id="statisticsContent"></div>
+            </section>
+            
+            <section class="view-section" id="financial">
+                <div class="section-header-modern">
+                    <h2><i class="fas fa-money-bill-wave"></i> Pénzügyi Áttekintés</h2>
+                </div>
+                <div id="financialContent"></div>
+            </section>
+            
+            <section class="view-section" id="register">
+                <div class="section-header-modern">
+                    <h2><i class="fas fa-user-plus"></i> Regisztráció</h2>
+                </div>
+                <div id="registerForm"></div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- Floating Action Button -->
+    <div class="fab">
+        <i class="fas fa-cog"></i>
+    </div>
+    
+    <script src="assets/js/dashboard-enterprise.js"></script>
+</body>
+</html>

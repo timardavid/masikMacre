@@ -1,0 +1,100 @@
+{
+  "name": "modern-wedding-invitation-template",
+  "version": "1.0.0",
+  "description": "Modern, responsive wedding invitation template with unique design and interactive features",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Build process completed'",
+    "test": "echo 'No tests specified'",
+    "dev": "echo 'Development server started'"
+  },
+  "keywords": [
+    "wedding",
+    "invitation",
+    "template",
+    "responsive",
+    "modern",
+    "html5",
+    "css3",
+    "javascript",
+    "themeforest",
+    "wedding-website",
+    "wedding-invitation",
+    "responsive-design",
+    "modern-design",
+    "interactive",
+    "animation",
+    "mobile-friendly",
+    "cross-browser",
+    "seo-optimized",
+    "accessibility"
+  ],
+  "author": {
+    "name": "Webdesign Studio",
+    "email": "contact@webdesignstudio.com"
+  },
+  "license": "Commercial",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webdesignstudio/wedding-template"
+  },
+  "bugs": {
+    "url": "https://github.com/webdesignstudio/wedding-template/issues"
+  },
+  "homepage": "https://github.com/webdesignstudio/wedding-template#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "files": [
+    "index.html",
+    "assets/",
+    "documentation/",
+    "README.md",
+    "package.json"
+  ],
+  "themeForest": {
+    "category": "Wedding",
+    "tags": [
+      "wedding",
+      "invitation",
+      "responsive",
+      "modern",
+      "html5",
+      "css3",
+      "javascript",
+      "wedding-website",
+      "wedding-invitation",
+      "responsive-design",
+      "modern-design",
+      "interactive",
+      "animation",
+      "mobile-friendly",
+      "cross-browser"
+    ],
+    "compatibility": [
+      "Chrome 60+",
+      "Firefox 55+",
+      "Safari 12+",
+      "Edge 79+",
+      "IE 11+"
+    ],
+    "features": [
+      "Responsive Design",
+      "Modern Animations",
+      "Interactive Elements",
+      "Countdown Timer",
+      "Photo Gallery",
+      "RSVP Form",
+      "Mobile Optimized",
+      "Cross Browser Compatible",
+      "SEO Optimized",
+      "Fast Loading",
+      "Easy Customization"
+    ]
+  }
+}

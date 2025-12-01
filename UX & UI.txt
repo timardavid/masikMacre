@@ -1,0 +1,176 @@
+Ux képzés:
+
+Mit csinál egy webdesigner?
+	
+WebDesign :	- IDEA
+		- Product
+		- Creativity
+		- Logo
+		- Research
+		- Website
+		- Advertsing
+
+UI vs UX vs CX
+
+	UI:	- Color theory
+		- typohraphy
+		- design patters
+		- interacitivity
+
+
+	UX:	- user Research
+		- Works
+		- usability
+		- navigation
+		- design
+		- HCI
+		- Structure
+		- interface
+
+	CX:	- Holistic Focus
+		- Broad Impact
+		- Cross-Depertmental
+
+UX designer a felhasználói élményt nyújt a design-jával a Ux és a UInak együtt kell működnie.
+UI design: Egyszerű legyen és nagyon hatékony, letisztult figyelemfelkeltő.
+
+
+		
+UI Designer:	- Look and Feel
+		- Visual Design of the product
+		- Interaction Design
+		- Responsability
+
+CX Designer: 	- Folyamat kontaktba van a felhasználóval vagy céggel
+		- Ő beszéli össze miket akar a megrendelő
+
+
+UI alapelvek:
+
+	- color(Fontos milyen színt választasz ez ad egy jó hangulatot az oldalhoz)
+	- A színeknek különböző jelentésük van.(Mennyiségre is figyelni kell)
+
+
+Warm Colors:
+
+	- Red, Orange, Yellow, (Haragot is jelentheti)
+
+Cool colors:
+	
+	- Blue, green, indigo, violet(Nyugalmat jelent)
+
+Black&White:
+
+	- Black, White, Grey(halált és a tisztaságot jelenti ez a két sín)
+
+
+UX color palette
+
+	- Most important thing(5,6 színt kell egybe rakni és akkor lesz igazán szép)
+
+
+
+
+Color Theory:
+
+	Prmary Colors: Yellow, Red, Blue (Ezeket a szineket nem szabad keverni egymással)
+	Secondary Colors: Orange, purple, green, (ezeket már lehet keverni árnyalatokkal)
+	Tertiary colors: Magenta, Vermillion, turkiz(Ezeket már lehet kombinálni akármivel)
+
+Az elsődlegesből össze kell rakni egy másodlagos színt.
+
+
+
+
+
+Szín fajták:
+
+
+Monochrom: (Nem minden esetbe baj ha ugyan azt a színt választod csak más árnyalatba)
+
+Triad: Ez ahogy benne is van már 3 színből áll(Egy színnek mindig dominánsnak kell lennie) pl: Burger King
+
+Analogus: Nagyon egyforma színeket használ (A harmónia a cél és nem kell sok kontrasztot használni)
+
+Tetradic: Ez már 4 színből áll, ezt már nehéz megoldani, hogy jól nézzen ki (Google)
+
+Square: Minda 4 szín egyenletesen helyezkedik el és egy szín dominál(Ebay)
+
+Split-Complemetner: Van egy bázis szín és egy távolabbi színt választunk párjának és ez egy nagyon magas kontrasztot fog adni (Taco Bell)
+
+
+
+
+A Brand Personality Matched with the Right Color
+
+
+Color balance:
+	
+	- Main brand 10% (Viszonyitás)
+	- secondary Brand color 30% (Brand szín)
+	- Any Justifying Neutral Color 60% (Semleges szín)
+
+
+Balance:
+
+	- Egyformáknak kell lenniük a formáknak (Nav, img, stb..)
+
+
+Visual weight
+Visual Weight by size (Ha az egyik ikon nagyobb mint a másik, akkor jelentheti azt hogy nehezebb)
+Visual Weight by color (Ha az egyik szín erősebb mint a másik, akkor az nagyobb vizuális súllyal bír)
+Visual Weight by Density (Ha az egyik kontraszt nagyobb mint a másik akkor az egyértelműen figyelem felkeltőbb)
+
+
+
+
+
+Types of Balance
+
+
+	- Symmetrical/Formal Balance (Mind a két oldalt egyenlően kell elosztani)
+	- Asymettrical/Informal Balance (Különbözö vizuális súlyú elemeket lehet egymás mellé rakni)
+	- Radial Balance (A középpont körül radiális egyensúly, nem ugyanolyan egyik oldala sem)
+	- Mosaic/Crystallographic Balance (Néha úgy néz ki mintha össze vissza lenne, de ha jobban megnézzük akkor kijön egy egységes kép)
+
+
+Alignment
+
+
+	- Informativ és represent (fixek legyenek a méretek ne legyen össze vissza semmi)
+	- Top or bottom Verical Alignmment (egymáshoz legyenek igazítva az elemek, ne legyenek elcsúszva)
+	- Centered Vertical Alignment (Minden elem középen helyezkedik el és nem lóg ki egyik sem)
+	- Horizontal Alignment (Horizontálisan helyezkedjenek el az elemek és ne lógjon ki egyik sem)
+	- Left and Right Horizontal Alignment (Egyenlő elosztásban legyen az oldal)
+	- Centered Horizontal Alignment (Az elemeken belül középre legyen igazítva az adott szöveg vagy kép)
+	- Media Object Alignment (Képeket berakása után kell elosztani a szöveget és pixelre pontosan kell elhelyezkedjen a többi)
+	- Edge Alignment (Elemeket a szélére kell rakni bal oldalt a fő rész jobb oldalt egy kép)
+	- Optical Alignment (Az elemek pontosan egy vonalba kell legyenek nem csúsz hatnak el)
+	- Alignment Examples for Text (A szöveg elhelyezkedése egy fontos dolog)
+	- Whitespace (Kell hagyni az elemek között egy kis helyet hogy kényelmesebb és jobb legyen)
+	- Macro vs Micro Whitespace (Az elemek között nagyobb helyek vannak(Macro)Az elemek között kisebb helyek vannak(Micro))
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

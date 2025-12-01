@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Részletes szolgáltatásaink - JDW webdesign megoldások">
+    <title>Szolgáltatások - JDW</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        .services-page {
+            padding-top: 100px;
+        }
+        
+        .services-hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-detail-section {
+            padding: 4rem 0;
+        }
+        
+        .service-detail-section:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+        
+        .service-detail-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .service-detail-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-detail-text p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .service-features-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.125rem;
+        }
+        
+        .service-features-list li:before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-size: 1.25rem;
+        }
+        
+        .service-detail-image {
+            position: relative;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .service-detail-image img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition-base);
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .process-number {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .process-step h4 {
+            margin-bottom: 0.75rem;
+        }
+        
+        .cta-banner {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .cta-banner h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-banner p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .service-detail-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>JD<strong>Webdesign</strong></span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="index.html#home" class="nav-link">Főoldal</a></li>
+                    <li><a href="services.html" class="nav-link active">Szolgáltatások</a></li>
+                    <li><a href="index.html#portfolio" class="nav-link">Portfólió</a></li>
+                    <li><a href="index.html#pricing" class="nav-link">Árak</a></li>
+                    <li><a href="about.html" class="nav-link">Rólunk</a></li>
+                    <li><a href="index.html#contact" class="nav-link">Kapcsolat</a></li>
+                </ul>
+                
+                <div class="nav-buttons">
+                    <a href="index.html#contact" class="btn btn-primary">Ajánlatot kérek</a>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Page Content -->
+    <div class="services-page">
+        <!-- Hero Section -->
+        <section class="services-hero">
+            <div class="container">
+                <span class="section-badge">Szolgáltatásaink</span>
+                <h1>Mit <span class="gradient-text">Kínálunk?</span></h1>
+                <p style="max-width: 700px; margin: 0 auto; font-size: 1.25rem;">
+                    Professzionális Figma webdesign tervezés - opcionális kódolással
+                </p>
+            </div>
+        </section>
+
+        <!-- Landing Page Service -->
+        <section class="service-detail-section" id="landing-page">
+            <div class="container">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <span class="section-badge">Figma Design</span>
+                        <h2><i class="fas fa-file-alt"></i> Landing Page</h2>
+                        <p>
+                            Professzionális landing page tervezés Figmában, amely tökéletesen mutatja be 
+                            vállalkozásodat vagy termékedet. Modern, letisztult dizájn amely konverzióra optimalizált.
+                        </p>
+                        <ul class="service-features-list">
+                            <li>Egyedi Figma design</li>
+                            <li>Reszponzív elrendezés minden eszközre</li>
+                            <li>Konverzióra optimalizált struktúra</li>
+                            <li>Újrafelhasználható komponensek</li>
+                            <li>Design rendszer</li>
+                            <li>Exportálható Figma fájlok</li>
+                        </ul>
+                        <a href="index.html#pricing" class="btn btn-primary" style="margin-top: 1.5rem;">
+                            <i class="fas fa-tag"></i> Árak Megtekintése
+                        </a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="assets/photos/hero-mockup.svg" alt="Landing Page">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OnePage Service -->
+        <section class="service-detail-section" id="onepage">
+            <div class="container">
+                <div class="service-detail-content">
+                    <div class="service-detail-image">
+                        <img src="assets/photos/features-illustration.svg" alt="OnePage">
+                    </div>
+                    <div class="service-detail-text">
+                        <span class="section-badge">Figma Design</span>
+                        <h2><i class="fas fa-file-alt"></i> OnePage</h2>
+                        <p>
+                            Egyoldalas weboldal tervezés Figmában. Modern, letisztult dizájn amely 
+                            tökéletesen bemutatja vállalkozásodat egy oldalon.
+                        </p>
+                        <ul class="service-features-list">
+                            <li>Egyedi Figma design</li>
+                            <li>Reszponzív elrendezés minden eszközre</li>
+                            <li>Konverzióra optimalizált struktúra</li>
+                            <li>Újrafelhasználható komponensek</li>
+                            <li>Design rendszer</li>
+                            <li>Exportálható Figma fájlok</li>
+                        </ul>
+                        <a href="index.html#pricing" class="btn btn-primary" style="margin-top: 1.5rem;">
+                            <i class="fas fa-tag"></i> Árak Megtekintése
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Service -->
+        <section class="service-detail-section" id="portfolio">
+            <div class="container">
+                <div class="service-detail-content">
+                    <div class="service-detail-text">
+                        <span class="section-badge">Figma Design</span>
+                        <h2><i class="fas fa-briefcase"></i> Portfólió Oldal</h2>
+                        <p>
+                            Egyedi portfólió weboldal tervezés Figmában kreatívoknak, fotósoknak, designereknek és 
+                            szolgáltatóknak. Stílusos megjelenés munkáid bemutatására.
+                        </p>
+                        <ul class="service-features-list">
+                            <li>Egyedi Figma design</li>
+                            <li>Galéria és projekt bemutató rendszer</li>
+                            <li>Interaktív elemek</li>
+                            <li>Reszponzív képkezelés</li>
+                            <li>Kapcsolati űrlap</li>
+                            <li>Modern, letisztult dizájn</li>
+                            <li>Exportálható Figma fájlok</li>
+                        </ul>
+                        <a href="index.html#pricing" class="btn btn-primary" style="margin-top: 1.5rem;">
+                            <i class="fas fa-tag"></i> Árak Megtekintése
+                        </a>
+                    </div>
+                    <div class="service-detail-image">
+                        <img src="assets/photos/hero-mockup.svg" alt="Portfólió">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Multi-page Service -->
+        <section class="service-detail-section" id="multi-page">
+            <div class="container">
+                <div class="service-detail-content">
+                    <div class="service-detail-image">
+                        <img src="assets/photos/features-illustration.svg" alt="Többoldalas">
+                    </div>
+                    <div class="service-detail-text">
+                        <span class="section-badge">Figma Design</span>
+                        <h2><i class="fas fa-layer-group"></i> Többoldalas Webdesign</h2>
+                        <p>
+                            Komplex, többoldalas weboldal tervezés Figmában. Teljes prototípus 
+                            vállalati bemutatkozó oldalakhoz. Csak design szolgáltatás.
+                        </p>
+                        <ul class="service-features-list">
+                            <li>Több aloldal tervezése (Figma)</li>
+                            <li>Interaktív Figma prototípus</li>
+                            <li>Teljes design rendszer</li>
+                            <li>Navigációs struktúra</li>
+                            <li>Design dokumentáció</li>
+                            <li>Exportálható Figma fájlok</li>
+                        </ul>
+                        <a href="index.html#pricing" class="btn btn-primary" style="margin-top: 1.5rem;">
+                            <i class="fas fa-tag"></i> Árak Megtekintése
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maintenance & Development Service -->
+        <section class="service-detail-section" id="maintenance">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Támogatás</span>
+                    <h2 class="section-title">Karbantartás & <span class="gradient-text">Továbbfejlesztés</span></h2>
+                    <p class="section-description">
+                        Ne hagyd magára weboldaladat! Folyamatos támogatás és fejlesztés.
+                    </p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <h3>Karbantartás</h3>
+                        <p>Design szintű karbantartás: tartalomfrissítés, design módosítások és kreatív támogatás.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Design frissítések</li>
+                            <li><i class="fas fa-check"></i> Tartalomfrissítés (design)</li>
+                            <li><i class="fas fa-check"></i> Kreatív támogatás</li>
+                            <li><i class="fas fa-check"></i> Design konzultáció</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Továbbfejlesztés</h3>
+                        <p>Meglévő designok bővítése új elemekkel, design modernizálás és kreatív fejlesztés.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Új design elemek</li>
+                            <li><i class="fas fa-check"></i> Design frissítés</li>
+                            <li><i class="fas fa-check"></i> Kreatív fejlesztés</li>
+                            <li><i class="fas fa-check"></i> Branding fejlesztés</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="service-detail-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Munkafolyamat</span>
+                    <h2 class="section-title">Hogyan <span class="gradient-text">Dolgozunk?</span></h2>
+                    <p class="section-description">
+                        Átlátható folyamat az ötlettől a kész weboldalig
+                    </p>
+                </div>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="process-number">1</div>
+                        <h4>Konzultáció</h4>
+                        <p>Megbeszéljük az elképzeléseidet és céljaidat</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-number">2</div>
+                        <h4>Tervezés</h4>
+                        <p>Figma designban elkészítjük a tervet</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-number">3</div>
+                        <h4>Design Finomhangolás</h4>
+                        <p>Design elemek finomhangolása és interaktív prototípus készítése</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-number">4</div>
+                        <h4>Design Tesztelés</h4>
+                        <p>Design tesztelés és UX optimalizálás</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="process-number">5</div>
+                        <h4>Design Átadás</h4>
+                        <p>Figma fájlok átadása és design dokumentáció</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <div class="container">
+                <h2>Készen Állsz az Indulásra?</h2>
+                <p>
+                    Kérj ingyenes ajánlatot és konzultációt még ma!
+                </p>
+                <div>
+                    <a href="index.html#contact" class="btn btn-light btn-lg" style="margin-right: 1rem;">
+                        <i class="fas fa-paper-plane"></i> Ajánlatot Kérek
+                    </a>
+                    <a href="index.html#pricing" class="btn btn-outline btn-lg" style="border-color: white; color: white;">
+                        <i class="fas fa-tag"></i> Árak Megtekintése
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>JD<strong>Webdesign</strong></span>
+                    </div>
+                    <p>
+                        Professzionális webdesign megoldások vállalkozásoknak. 
+                        Figmában tervezett vagy kóddal fejlesztett, modern, reszponzív webdesignok.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Szolgáltatások</h4>
+                    <ul>
+                        <li><a href="services.html">Landing Page</a></li>
+                        <li><a href="services.html">OnePage</a></li>
+                        <li><a href="services.html">Portfólió Oldal</a></li>
+                        <li><a href="services.html">Többoldalas Webdesign</a></li>
+                        <li><a href="services.html">Karbantartás</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Információ</h4>
+                    <ul>
+                        <li><a href="index.html#portfolio">Portfólió</a></li>
+                        <li><a href="index.html#pricing">Árak</a></li>
+                        <li><a href="about.html">Rólunk</a></li>
+                        <li><a href="about.html#team">Csapatunk</a></li>
+                        <li><a href="index.html#contact">Kapcsolat</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Kapcsolat</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@jdw.hu</li>
+                        <li><i class="fas fa-phone"></i> +36 20 803 8081</li>
+                        <li><i class="fas fa-map-marker-alt"></i>Csak online</li>
+                        <li><i class="fas fa-clock"></i> H-P: 9:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 JDW. Minden jog fenntartva.</p>
+                <div class="footer-links">
+                    <a href="#">Adatvédelem</a>
+                    <a href="#">Felhasználási feltételek</a>
+                    <a href="#">Süti beállítások</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

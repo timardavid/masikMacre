@@ -1,0 +1,27 @@
+# Simple routing without RewriteEngine (for MAMP without mod_rewrite)
+# All requests go to index.php
+
+<Files "index.php">
+    AcceptPathInfo On
+</Files>
+
+# Fix for Authorization header in Apache/MAMP
+# Some Apache configurations strip Authorization header, this preserves it
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP:Authorization} ^(.*)
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%1]
+</IfModule>
+
+# Alternative method if mod_rewrite doesn't work
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Disable directory listing
+Options -Indexes

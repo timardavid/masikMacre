@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vállalati Dashboard - Pro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="company-logo">🏢</div>
+            <h2>Company Pro</h2>
+            <p id="userName">-</p>
+            <p id="userRole">-</p>
+        </div>
+        
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#" data-view="overview" class="active"><i class="fas fa-chart-line"></i> Áttekintés</a></li>
+            <li><a href="#" data-view="employees"><i class="fas fa-users"></i> Dolgozók</a></li>
+            <li><a href="#" data-view="register" id="registerMenuItem" style="display:none;"><i class="fas fa-user-plus"></i> Regisztráció</a></li>
+            <li><a href="#" data-view="tasks"><i class="fas fa-tasks"></i> Feladatok</a></li>
+            <li><a href="#" data-view="work-status"><i class="fas fa-clock"></i> Munkaidő</a></li>
+            <li><a href="#" data-view="statistics"><i class="fas fa-chart-pie"></i> Statisztikák</a></li>
+            <li><a href="#" data-view="financial" id="financialMenuItem" style="display:none;"><i class="fas fa-money-bill-wave"></i> Pénzügy</a></li>
+        </ul>
+        
+        <div class="sidebar-footer">
+            <button onclick="logout()" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Kijelentkezés</button>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Overview Section -->
+        <section class="view-section active" id="overview">
+            <div class="page-header">
+                <h1><i class="fas fa-chart-line"></i> Vállalati Áttekintés</h1>
+                <p class="subtitle">Teljes körű áttekintés a vállalatról</p>
+            </div>
+            
+            <div class="stats-grid" id="overviewStats">
+                <!-- Filled by JavaScript -->
+            </div>
+            
+            <div class="charts-row">
+                <div class="chart-card">
+                    <h3><i class="fas fa-building"></i> Dolgozók részlegenként</h3>
+                    <canvas id="departmentChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3><i class="fas fa-dollar-sign"></i> Fizetési átlag</h3>
+                    <canvas id="salaryChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="warning-alerts" id="warningAlerts"></div>
+        </section>
+        
+        <!-- Financial Section -->
+        <section class="view-section" id="financial">
+            <div class="page-header">
+                <h1><i class="fas fa-money-bill-wave"></i> Pénzügyi Áttekintés</h1>
+                <p class="subtitle">Bevételek, kiadások és profit elemzés</p>
+            </div>
+            
+            <div class="financial-stats-grid" id="financialStats">
+                <!-- Filled by JavaScript -->
+            </div>
+            
+            <div class="charts-row">
+                <div class="chart-card-large">
+                    <h3><i class="fas fa-chart-line"></i> Havi bevételek trend (6 hónap)</h3>
+                    <canvas id="revenueTrendChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="charts-row">
+                <div class="chart-card">
+                    <h3><i class="fas fa-calendar-week"></i> Heti bevételek</h3>
+                    <canvas id="weeklyRevenueChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3><i class="fas fa-box"></i> Szolgáltatások</h3>
+                    <div id="productsList"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Register Section -->
+        <section class="view-section" id="register">
+            <div class="page-header">
+                <h1><i class="fas fa-user-plus"></i> Új Dolgozó Regisztrálása</h1>
+                <p class="subtitle">Adja meg a dolgozó részletes adatait</p>
+            </div>
+            
+            <div class="register-container">
+                <form id="registerForm" onsubmit="registerNewUser(event)">
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Személyes adatok</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-id-card"></i> Teljes Név *</label>
+                                <input type="text" id="reg_name" required placeholder="pl. Kovács János">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-envelope"></i> Email cím *</label>
+                                <input type="email" id="reg_email" required placeholder="kovacs.janos@company.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-phone"></i> Telefonszám</label>
+                                <input type="text" id="reg_phone" placeholder="+36 30 123 4567">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-lock"></i> Jelszó *</label>
+                                <input type="password" id="reg_password" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3><i class="fas fa-briefcase"></i> Munkaköri adatok</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fas fa-user-tie"></i> Szerepkör *</label>
+                                <select id="reg_role" required>
+                                    <option value="">Válasszon szerepkört...</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="IT">IT Szakember</option>
+                                    <option value="HR">HR Menedzser</option>
+                                    <option value="Finance">Pénzügyes</option>
+                                    <option value="CEO">Ügyvezető</option>
+                                    <option value="Financial Advisor">Pénzügyi Tanácsadó</option>
+                                    <option value="Accountant">Könyvelő</option>
+                                    <option value="Cleaner">Takarító</option>
+                                    <option value="Receptionist">Recepciós</option>
+                                    <option value="Secretary">Titkár</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-building"></i> Részleg</label>
+                                <input type="text" id="reg_department" placeholder="pl. Pénzügyi Tanácsadás">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label><i class="fas fa-money-bill-wave"></i> Havi fizetés (Ft)</label>
+                                <input type="number" id="reg_salary" min="0" step="1000" placeholder="500000">
+                                <small>Adja meg a bruttó havi fizetést forintban</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary btn-large"><i class="fas fa-user-plus"></i> Regisztrálás</button>
+                        <button type="button" class="btn-secondary btn-large" onclick="resetRegisterForm()"><i class="fas fa-undo"></i> Törlés</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <!-- Employees Section -->
+        <section class="view-section" id="employees">
+            <div class="section-header">
+                <div>
+                    <h2><i class="fas fa-users"></i> Dolgozók</h2>
+                    <p class="subtitle" id="employeeCount">Betöltés...</p>
+                </div>
+                <button class="btn-primary" onclick="openModal('employee')"><i class="fas fa-plus"></i> Új dolgozó</button>
+            </div>
+            
+            <div class="filter-bar">
+                <input type="text" id="searchEmployees" placeholder="🔍 Keresés dolgozók között..." onkeyup="filterEmployees()">
+                <select id="filterDepartment" onchange="filterEmployees()">
+                    <option value="">Minden részleg</option>
+                </select>
+            </div>
+            
+            <div class="employee-grid" id="employeeGrid"></div>
+        </section>
+        
+        <!-- Tasks Section -->
+        <section class="view-section" id="tasks">
+            <div class="section-header">
+                <div>
+                    <h2><i class="fas fa-tasks"></i> Feladatok</h2>
+                    <p class="subtitle">Ügyfélfeladatok és projektek kezelése</p>
+                </div>
+                <button class="btn-primary" onclick="openModal('task')"><i class="fas fa-plus"></i> Új feladat</button>
+            </div>
+            
+            <div class="task-filters">
+                <button class="filter-btn active" onclick="filterTasks('all')">Összes</button>
+                <button class="filter-btn" onclick="filterTasks('Critical')">🔴 Kritikus</button>
+                <button class="filter-btn" onclick="filterTasks('Urgent')">🟡 Sürgős</button>
+                <button class="filter-btn" onclick="filterTasks('Not Urgent')">🟢 Nem sürgős</button>
+            </div>
+            
+            <div class="task-list" id="taskList"></div>
+        </section>
+        
+        <!-- Work Status Section -->
+        <section class="view-section" id="work-status">
+            <div class="section-header">
+                <div>
+                    <h2><i class="fas fa-clock"></i> Munkaidő Követés</h2>
+                    <p class="subtitle">Valós idejű státuszfrissítések</p>
+                </div>
+                <button class="btn-secondary" onclick="updateMyStatus()"><i class="fas fa-sync"></i> Státusz frissítés</button>
+            </div>
+            
+            <div class="work-status-list" id="workStatusList"></div>
+        </section>
+        
+        <!-- Statistics Section -->
+        <section class="view-section" id="statistics">
+            <div class="page-header">
+                <h1><i class="fas fa-chart-pie"></i> Havi Statisztikák</h1>
+                <p class="subtitle">Részletes munkaidő és teljesítményadatok</p>
+            </div>
+            
+            <div class="statistics-grid" id="statisticsGrid"></div>
+        </section>
+    </div>
+    
+    <!-- Modals -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    
+    <script src="assets/js/dashboard-complete.js"></script>
+</body>
+</html>
+

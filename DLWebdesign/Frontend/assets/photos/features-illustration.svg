@@ -1,0 +1,95 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="250" cy="250" r="200" fill="url(#bgGradient)" opacity="0.1"/>
+  
+  <!-- Main Monitor -->
+  <rect x="100" y="120" width="300" height="200" rx="10" fill="white" stroke="#6366F1" stroke-width="3"/>
+  
+  <!-- Monitor Screen -->
+  <rect x="110" y="135" width="280" height="165" rx="5" fill="#F8FAFC"/>
+  
+  <!-- Code Lines on Screen -->
+  <rect x="125" y="155" width="80" height="8" rx="4" fill="#EC4899" opacity="0.6"/>
+  <rect x="125" y="170" width="150" height="8" rx="4" fill="#6366F1" opacity="0.6"/>
+  <rect x="135" y="185" width="120" height="8" rx="4" fill="#8B5CF6" opacity="0.6"/>
+  <rect x="125" y="200" width="100" height="8" rx="4" fill="#EC4899" opacity="0.6"/>
+  <rect x="135" y="215" width="140" height="8" rx="4" fill="#6366F1" opacity="0.6"/>
+  <rect x="125" y="230" width="90" height="8" rx="4" fill="#8B5CF6" opacity="0.6"/>
+  
+  <!-- Window -->
+  <rect x="285" y="155" width="100" height="120" rx="5" fill="white" stroke="#E0E7FF" stroke-width="2"/>
+  <rect x="295" y="165" width="80" height="50" rx="3" fill="#E0E7FF"/>
+  <rect x="295" y="225" width="35" height="40" rx="3" fill="#6366F1" opacity="0.3"/>
+  <rect x="340" y="225" width="35" height="40" rx="3" fill="#EC4899" opacity="0.3"/>
+  
+  <!-- Monitor Stand -->
+  <rect x="220" y="320" width="60" height="10" rx="5" fill="#64748B"/>
+  <rect x="180" y="330" width="140" height="5" rx="2.5" fill="#64748B"/>
+  
+  <!-- Mobile Phone -->
+  <rect x="50" y="280" width="90" height="160" rx="10" fill="white" stroke="#6366F1" stroke-width="3"/>
+  <rect x="60" y="295" width="70" height="125" rx="5" fill="#F8FAFC"/>
+  <circle cx="95" cy="432" r="8" fill="#6366F1" opacity="0.3"/>
+  
+  <!-- Mobile Content -->
+  <rect x="70" y="305" width="50" height="6" rx="3" fill="#EC4899" opacity="0.6"/>
+  <rect x="70" y="320" width="50" height="30" rx="3" fill="#E0E7FF"/>
+  <rect x="70" y="360" width="50" height="20" rx="3" fill="#E0E7FF"/>
+  <rect x="70" y="390" width="50" height="20" rx="3" fill="#E0E7FF"/>
+  
+  <!-- Tablet -->
+  <rect x="360" y="300" width="120" height="160" rx="8" fill="white" stroke="#EC4899" stroke-width="3"/>
+  <rect x="370" y="310" width="100" height="135" rx="5" fill="#F8FAFC"/>
+  
+  <!-- Tablet Content -->
+  <rect x="380" y="325" width="35" height="35" rx="5" fill="#6366F1" opacity="0.3"/>
+  <rect x="425" y="325" width="35" height="35" rx="5" fill="#EC4899" opacity="0.3"/>
+  <rect x="380" y="370" width="80" height="6" rx="3" fill="#E0E7FF"/>
+  <rect x="380" y="385" width="80" height="6" rx="3" fill="#E0E7FF"/>
+  <rect x="380" y="400" width="60" height="6" rx="3" fill="#E0E7FF"/>
+  <rect x="380" y="420" width="35" height="15" rx="7.5" fill="url(#buttonGradient)"/>
+  
+  <!-- Floating Icons -->
+  <!-- Settings Icon -->
+  <circle cx="430" cy="100" r="25" fill="white" filter="url(#shadow)"/>
+  <path d="M430 85 L430 115 M415 100 L445 100" stroke="#6366F1" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="430" cy="100" r="8" stroke="#6366F1" stroke-width="3" fill="none"/>
+  
+  <!-- Chart Icon -->
+  <circle cx="70" cy="100" r="25" fill="white" filter="url(#shadow)"/>
+  <rect x="60" y="105" width="5" height="15" rx="2" fill="#EC4899"/>
+  <rect x="68" y="95" width="5" height="25" rx="2" fill="#6366F1"/>
+  <rect x="76" y="100" width="5" height="20" rx="2" fill="#8B5CF6"/>
+  
+  <!-- Check Icon -->
+  <circle cx="450" cy="250" r="20" fill="white" filter="url(#shadow)"/>
+  <path d="M442 250 L448 256 L458 244" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Star Icon -->
+  <circle cx="50" cy="200" r="20" fill="white" filter="url(#shadow)"/>
+  <path d="M50 192 L52 198 L58 198 L53 202 L55 208 L50 204 L45 208 L47 202 L42 198 L48 198 Z" fill="#FBBF24"/>
+  
+  <!-- Gradients and Filters -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="buttonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
+
